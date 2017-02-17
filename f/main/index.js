@@ -30,7 +30,7 @@ function fetchMetadata(url, callback) {
     function sanitize(body) {
         try {
             body = JSON.parse(body);
-            return JSON.stringify(body, null, '\t');
+            return JSON.stringify(body);
         } catch (e) {
             return ERROR_JSON;
         }
