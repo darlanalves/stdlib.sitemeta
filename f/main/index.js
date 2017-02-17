@@ -1,4 +1,5 @@
 var http = require('http');
+var ERROR_JSON = '{ "error": true, "code": 500 }';
 
 module.exports = function(params, callback) {
     var url = params.kwargs.url;
@@ -17,17 +18,21 @@ function fetchMetadata(url, callback) {
             body += String(chunk);
         });
 
-        response.on('end', function(chunk) {
-            if (chunk) {
-                body += chunk;
-            }
-
-            console.log('sdsds', body);
-            callback(null, body);
+        response.on('end', function() {
+            callback(null, sanitize(body));
         });
 
         response.on('error', function(e) {
-            callback(e);
+            callback(null, ERROR_JSON);
         });
+    }
+
+    function sanitize(body) {
+        try {
+            body = JSON.parse(body);
+            return JSON.stringify(body, null, '\t');
+        } catch (e) {
+            return ERROR_JSON;
+        }
     }
 }

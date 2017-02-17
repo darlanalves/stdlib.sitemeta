@@ -2,7 +2,7 @@
     "name": "stdlib.sitemeta",
     "version": "0.1.0",
     "author": "darlan <me@darlanalv.es>",
-    "description": "Hello World Service",
+    "description": "A service to retrieve metadata about any URL",
     "stdlib": {
         "name": "darlan/sitemeta",
         "defaultFunction": "main",
