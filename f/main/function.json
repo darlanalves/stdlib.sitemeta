@@ -1,0 +1,10 @@
+{
+    "name": "main",
+    "description": "",
+    "args": [
+        "url"
+    ],
+    "kwargs": {
+        "url": "URL to process"
+    }
+}

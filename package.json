@@ -1,0 +1,12 @@
+{
+    "name": "stdlib.sitemeta",
+    "version": "0.1.0",
+    "author": "darlan <me@darlanalv.es>",
+    "description": "Hello World Service",
+    "stdlib": {
+        "name": "darlan/sitemeta",
+        "defaultFunction": "main",
+        "timeout": 10000,
+        "publish": true
+    }
+}
